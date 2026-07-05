@@ -1,0 +1,12 @@
+[project]
+name = "enterprise-ai-toolkit"
+version = "0.1.0"
+description = "Enterprise AI Toolkit for AI Integration Engineer Bootcamp"
+readme = "README.md"
+requires-python = ">=3.13"
+
+authors = [
+    { name = "Muhammad Ali" email = "sbawani2007@gmail.com" }
+]
+
+dependencies = []
