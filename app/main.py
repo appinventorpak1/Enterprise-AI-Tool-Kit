@@ -4,15 +4,12 @@ Enterprise AI Toolkit
 Author : Muhammad Ali
 Version : 0.1.0
 """
+from app.core.application import Application
+
 
 def main():
-
-    print("=" * 60)
-    print(" Enterprise AI Toolkit")
-    print(" Version : 0.1.0")
-    print("=" * 60)
-
-    print("Application Started Successfully")
+    app = Application()
+    app.start()
 
 
 if __name__ == "__main__":
