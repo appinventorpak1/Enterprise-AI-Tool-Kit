@@ -1,4 +1,4 @@
-from app.config.settings import APP_NAME, APP_VERSION
+from app.config.settings import APP_NAME, APP_VERSION, APP_ENV
 from app.core.logger import logger
 import logging
 
@@ -10,6 +10,7 @@ class Application:
         print("=" * 60)
         print(APP_NAME)
         print(f"Version : {APP_VERSION}")
+        print(f"Environment : {APP_ENV}")
         print("=" * 60)
         
         logger.info("Application Started Successfully")

@@ -2,6 +2,8 @@
 Application Settings
 """
 
-APP_NAME = "Enterprise AI Toolkit"
+from app.config.environment import get_environment_variable
 
-APP_VERSION = "0.1.0"
+APP_NAME =get_environment_variable("APP_NAME");
+APP_VERSION = get_environment_variable("APP_VERSION");
+APP_ENV = get_environment_variable("APP_ENV");
