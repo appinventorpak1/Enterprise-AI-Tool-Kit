@@ -4,6 +4,7 @@ Application Settings
 """
 
 from app.config.environment import get_environment_variable
+from app.core.exceptions import ConfigurationError
 
 
 # ======================
@@ -29,7 +30,9 @@ def normalize(value):
 def validate(value, key: str = None, required: bool = False):
     """Step 3: Basic validation"""
     if required and value is None:
-        raise ValueError(f"Required configuration '{key}' is missing.")
+        
+        raise ConfigurationError(key=key, value=value, expected="Non-empty value",
+                     reason="Missing required configuration")
     return value
 
 
@@ -71,12 +74,11 @@ def validate_allowed_values(key: str, value, allowed_values: list):
 
     # Safe way to join any type of values
     allowed = "\n".join(str(v) for v in allowed_values)
+
+    raise ConfigurationError(key=key, value=value, expected=allowed, 
+            reason="Value not in allowed set")
     
-    raise ValueError(
-        f"Invalid value for '{key}'.\n\n"
-        f"Current Value:\n{value}\n\n"
-        f"Allowed Values:\n{allowed}"
-    )
+    
 
 
 # ======================
